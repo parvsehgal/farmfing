@@ -7,21 +7,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Activity,
-  Package,
-  Calendar,
-  DollarSign,
-  AlertTriangle,
-} from "lucide-react";
+import { Package, Calendar, DollarSign, AlertTriangle } from "lucide-react";
 import RecentOrdersCard from "../components/dashboard/RecentOrdersCard";
 import InventoryLevelsCard from "../components/dashboard/InventoryLevelsCard";
 import AIRecommendationsCard from "../components/dashboard/AIRecommendationsCard";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartTooltip,
-} from "@/components/ui/chart";
+import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 import {
   Line,
   Bar,
@@ -31,7 +21,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 

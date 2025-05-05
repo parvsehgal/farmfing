@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface Category {
   id: string;
@@ -15,10 +14,10 @@ interface CategorySidebarProps {
   onSelectCategory: (categoryId: string) => void;
 }
 
-const CategorySidebar = ({ 
-  categories, 
-  activeCategory, 
-  onSelectCategory 
+const CategorySidebar = ({
+  categories,
+  activeCategory,
+  onSelectCategory,
 }: CategorySidebarProps) => {
   return (
     <div className="w-full md:w-64 mb-6 md:mb-0">
@@ -29,21 +28,21 @@ const CategorySidebar = ({
             variant={activeCategory === null ? "default" : "ghost"}
             className={cn(
               "w-full justify-start text-left",
-              activeCategory === null ? "bg-primary" : ""
+              activeCategory === null ? "bg-primary" : "",
             )}
             onClick={() => onSelectCategory("all")}
           >
             <span className="mr-2">🏷️</span>
             All Products
           </Button>
-          
+
           {categories.map((category) => (
             <Button
               key={category.id}
               variant={activeCategory === category.id ? "default" : "ghost"}
               className={cn(
                 "w-full justify-start text-left",
-                activeCategory === category.id ? "bg-primary" : ""
+                activeCategory === category.id ? "bg-primary" : "",
               )}
               onClick={() => onSelectCategory(category.id)}
             >
@@ -52,7 +51,7 @@ const CategorySidebar = ({
             </Button>
           ))}
         </div>
-        
+
         <div className="mt-8">
           <h3 className="font-medium text-sm mb-3">Quality Standards</h3>
           <div className="space-y-2 text-sm">
@@ -74,19 +73,19 @@ const CategorySidebar = ({
             </div>
           </div>
         </div>
-        
+
         <div className="mt-8">
           <h3 className="font-medium text-sm mb-3">Price Range</h3>
           <div className="flex items-center space-x-2 mb-4">
-            <input 
-              type="number" 
-              placeholder="Min" 
+            <input
+              type="number"
+              placeholder="Min"
               className="w-full px-2 py-1 border rounded text-sm"
             />
             <span>to</span>
-            <input 
-              type="number" 
-              placeholder="Max" 
+            <input
+              type="number"
+              placeholder="Max"
               className="w-full px-2 py-1 border rounded text-sm"
             />
           </div>

@@ -1,6 +1,5 @@
-
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { createContext, useContext, useState, ReactNode } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 interface CartItem {
   id: string;
@@ -28,15 +27,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const { toast } = useToast();
 
   const addToCart = (item: CartItem) => {
-    setItems(prevItems => {
-      const existingItemIndex = prevItems.findIndex(i => i.id === item.id);
-      
+    setItems((prevItems) => {
+      const existingItemIndex = prevItems.findIndex((i) => i.id === item.id);
+
       if (existingItemIndex !== -1) {
         // Item already exists, update quantity
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
           ...updatedItems[existingItemIndex],
-          quantity: updatedItems[existingItemIndex].quantity + item.quantity
+          quantity: updatedItems[existingItemIndex].quantity + item.quantity,
         };
         return updatedItems;
       } else {
@@ -47,7 +46,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const removeFromCart = (itemId: string) => {
-    setItems(prevItems => prevItems.filter(item => item.id !== itemId));
+    setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
     toast({
       title: "Item removed",
       description: "The item has been removed from your cart",
@@ -59,11 +58,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       removeFromCart(itemId);
       return;
     }
-    
-    setItems(prevItems => 
-      prevItems.map(item => 
-        item.id === itemId ? { ...item, quantity } : item
-      )
+
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, quantity } : item,
+      ),
     );
   };
 
@@ -76,22 +75,24 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const itemCount = items.reduce((count, item) => count + item.quantity, 0);
-  
+
   const total = items.reduce(
-    (sum, item) => sum + item.price * item.quantity, 
-    0
+    (sum, item) => sum + item.price * item.quantity,
+    0,
   );
 
   return (
-    <CartContext.Provider value={{ 
-      items, 
-      addToCart, 
-      removeFromCart, 
-      updateQuantity, 
-      clearCart, 
-      itemCount, 
-      total 
-    }}>
+    <CartContext.Provider
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        itemCount,
+        total,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
@@ -100,7 +101,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };

@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import {
-  Plus,
-  Minus,
-  Filter,
-  ShieldCheck,
-  Star,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { Plus, Minus, Filter, Star } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -45,7 +37,6 @@ interface Category {
 }
 
 const RawMaterials = () => {
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [selectedItem, setSelectedItem] = useState<CategoryItem | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const { addToCart } = useCart();
