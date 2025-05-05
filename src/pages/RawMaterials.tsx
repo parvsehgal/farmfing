@@ -308,7 +308,7 @@ const RawMaterials = () => {
   };
 
   // Function to handle adding product to cart
-  const handleAddToCart = (item: CategoryItem, quantity: number) => {
+  const handleAddToCart = (item: CategoryItem, quantity: number = 1) => {
     addToCart({
       id: item.id,
       name: item.name,
@@ -399,7 +399,7 @@ const RawMaterials = () => {
                 onAddToCart={(product) =>
                   handleAddToCart(product as CategoryItem)
                 }
-              />{" "}
+              />
             </div>
           </div>
         </div>
