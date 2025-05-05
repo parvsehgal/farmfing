@@ -58,13 +58,6 @@ const InventoryLevelsCard = () => {
         <div className="space-y-4">
           {inventoryItems.map((item) => {
             const percentage = (item.current / item.max) * 100;
-            let progressColor = "bg-green-500";
-
-            if (percentage <= 20) {
-              progressColor = "bg-red-500";
-            } else if (percentage <= 40) {
-              progressColor = "bg-yellow-500";
-            }
 
             return (
               <div key={item.id} className="space-y-1">

@@ -385,7 +385,6 @@ const RawMaterials = () => {
                   </select>
                 </div>
               </div>
-
               {/* Product Grid */}
               <ProductGrid
                 products={
@@ -394,9 +393,13 @@ const RawMaterials = () => {
                     []
                     : allProducts
                 }
-                onOpenDetail={openItemDialog}
-                onAddToCart={handleAddToCart}
-              />
+                onOpenDetail={(product) =>
+                  openItemDialog(product as CategoryItem)
+                }
+                onAddToCart={(product) =>
+                  handleAddToCart(product as CategoryItem)
+                }
+              />{" "}
             </div>
           </div>
         </div>
