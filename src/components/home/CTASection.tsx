@@ -1,7 +1,5 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -12,16 +10,25 @@ const CTASection = () => {
             Ready to Transform Your Restaurant's Supply Chain?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of restaurants that are saving time and money with Farmfing's smart procurement solutions.
+            Join thousands of restaurants that are saving time and money with
+            Farmfing's smart procurement solutions.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/signup">
-              <Button size="lg" variant="secondary" className="px-8 bg-white text-farmfing-primary hover:bg-gray-100">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="px-8 bg-white text-farmfing-primary hover:bg-gray-100"
+              >
                 Get Started Free
               </Button>
             </Link>
             <Link to="/demo">
-              <Button size="lg" variant="outline" className="px-8 border-white text-white hover:bg-blue-600">
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 border-white text-white hover:bg-blue-600"
+              >
                 Request Demo
               </Button>
             </Link>

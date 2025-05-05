@@ -1,45 +1,49 @@
-
-import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 // Mock data for inventory levels
 const inventoryItems = [
   {
     id: 1,
-    name: 'Flour (All-Purpose)',
-    category: 'Baking',
+    name: "Flour (All-Purpose)",
+    category: "Baking",
     current: 75,
     max: 100,
-    unit: 'kg',
-    status: 'Good',
+    unit: "kg",
+    status: "Good",
   },
   {
     id: 2,
-    name: 'Chicken Breast',
-    category: 'Meat',
+    name: "Chicken Breast",
+    category: "Meat",
     current: 12,
     max: 50,
-    unit: 'kg',
-    status: 'Low',
+    unit: "kg",
+    status: "Low",
   },
   {
     id: 3,
-    name: 'Olive Oil',
-    category: 'Oils',
+    name: "Olive Oil",
+    category: "Oils",
     current: 8,
     max: 20,
-    unit: 'liters',
-    status: 'Good',
+    unit: "liters",
+    status: "Good",
   },
   {
     id: 4,
-    name: 'Fresh Tomatoes',
-    category: 'Vegetables',
+    name: "Fresh Tomatoes",
+    category: "Vegetables",
     current: 5,
     max: 30,
-    unit: 'kg',
-    status: 'Critical',
+    unit: "kg",
+    status: "Critical",
   },
 ];
 
@@ -55,13 +59,13 @@ const InventoryLevelsCard = () => {
           {inventoryItems.map((item) => {
             const percentage = (item.current / item.max) * 100;
             let progressColor = "bg-green-500";
-            
+
             if (percentage <= 20) {
               progressColor = "bg-red-500";
             } else if (percentage <= 40) {
               progressColor = "bg-yellow-500";
             }
-            
+
             return (
               <div key={item.id} className="space-y-1">
                 <div className="flex items-center justify-between">
@@ -73,27 +77,34 @@ const InventoryLevelsCard = () => {
                     <p className="font-medium">
                       {item.current} / {item.max} {item.unit}
                     </p>
-                    <p className={`text-sm ${
-                      item.status === 'Critical' ? 'text-red-500' :
-                      item.status === 'Low' ? 'text-yellow-500' :
-                      'text-green-500'
-                    }`}>
+                    <p
+                      className={`text-sm ${item.status === "Critical"
+                          ? "text-red-500"
+                          : item.status === "Low"
+                            ? "text-yellow-500"
+                            : "text-green-500"
+                        }`}
+                    >
                       {item.status}
                     </p>
                   </div>
                 </div>
                 <Progress
                   value={percentage}
-                  className={`h-2 ${
-                    percentage <= 20 ? 'bg-gray-100 [&>div]:bg-red-500' :
-                    percentage <= 40 ? 'bg-gray-100 [&>div]:bg-yellow-500' :
-                    'bg-gray-100 [&>div]:bg-green-500'
-                  }`}
+                  className={`h-2 ${percentage <= 20
+                      ? "bg-gray-100 [&>div]:bg-red-500"
+                      : percentage <= 40
+                        ? "bg-gray-100 [&>div]:bg-yellow-500"
+                        : "bg-gray-100 [&>div]:bg-green-500"
+                    }`}
                 />
               </div>
             );
           })}
-          <a href="/inventory" className="block text-center text-sm text-farmfing-primary hover:underline">
+          <a
+            href="/inventory"
+            className="block text-center text-sm text-farmfing-primary hover:underline"
+          >
             View full inventory →
           </a>
         </div>

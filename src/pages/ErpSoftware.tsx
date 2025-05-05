@@ -1,6 +1,4 @@
-
-import React from 'react';
-import Layout from '../components/layout/Layout';
+import Layout from "../components/layout/Layout";
 import {
   Card,
   CardContent,
@@ -18,8 +16,8 @@ import {
   Package,
   Settings2,
   Truck,
-  Users
-} from 'lucide-react';
+  Users,
+} from "lucide-react";
 
 const ErpSoftware = () => {
   return (
@@ -27,7 +25,9 @@ const ErpSoftware = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">ERP Control Panel</h1>
-          <p className="text-gray-600">Manage your business operations from one place</p>
+          <p className="text-gray-600">
+            Manage your business operations from one place
+          </p>
         </div>
 
         <Tabs defaultValue="overview" className="space-y-6">
@@ -51,7 +51,9 @@ const ErpSoftware = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">2,345</div>
-                  <p className="text-xs text-muted-foreground">units in stock</p>
+                  <p className="text-xs text-muted-foreground">
+                    units in stock
+                  </p>
                 </CardContent>
               </Card>
 
@@ -77,7 +79,9 @@ const ErpSoftware = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">18</div>
-                  <p className="text-xs text-muted-foreground">to be delivered</p>
+                  <p className="text-xs text-muted-foreground">
+                    to be delivered
+                  </p>
                 </CardContent>
               </Card>
 
@@ -159,9 +163,7 @@ const ErpSoftware = () => {
                     <ClipboardList className="h-5 w-5" />
                     Quick Actions
                   </CardTitle>
-                  <CardDescription>
-                    Common tasks and operations
-                  </CardDescription>
+                  <CardDescription>Common tasks and operations</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
@@ -200,9 +202,7 @@ const ErpSoftware = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Order Management</CardTitle>
-                <CardDescription>
-                  Track and manage all orders
-                </CardDescription>
+                <CardDescription>Track and manage all orders</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -232,9 +232,7 @@ const ErpSoftware = () => {
             <Card>
               <CardHeader>
                 <CardTitle>System Settings</CardTitle>
-                <CardDescription>
-                  Configure your ERP settings
-                </CardDescription>
+                <CardDescription>Configure your ERP settings</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
